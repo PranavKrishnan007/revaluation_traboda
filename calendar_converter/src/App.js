@@ -5,29 +5,10 @@ import './index.css';
 
 function App() {
   const [value, setValue] = useState(new Date());
-  const something = value.toDateString().split(' ')
-  const year = something[3]
-  const leap = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
-  // const days = [leap ? 31 : 30, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30]
-  // const initialValue = 0;
-  // const total_days = days.reduce(
-  //   (previousValue, currentValue) => previousValue + currentValue,
-  //   initialValue
-  // );
-  const saka_months = [
-    'Chaitra',
-    'Vaisakha',
-    'Jyaistha',
-    'Asadha',
-    'Sravana',
-    'Bhadra',
-    'Asvina',
-    'Kartika',
-    'Agrahayana',
-    'Pausa',
-    'Magha',
-    'Phalguna',
-  ];
+  const current_month = value.getMonth()
+  const current_date = value.getDate()
+  const current_year = value.getFullYear()
+  const leap = (current_year % 4 === 0 && current_year % 100 !== 0) || current_year % 400 === 0
 
   const saka_days = [
     'Somavara',
@@ -39,6 +20,23 @@ function App() {
     'Ravivara',
   ];
 
+  const month = [
+    // saka_month,previous saka_month,gregorian_month,saka_greg_start_date,greg_month_total_days
+    ['Magha', 'Pausa', 'Jan', 21, 31],
+    ['Phalguna', 'Magha', 'Feb', 20, leap? 29 : 28],
+    ['Chaitra', 'Phalguna', 'Mar', leap? 21 : 22, 31],
+    ['Vaisakha', 'Chaitra', 'Apr', 21, 30],
+    ['Jyaistha', 'Vaisakha', 'May', 22, 31],
+    ['Asadha', 'Jyaistha', 'Jun', 22, 30],
+    ['Sravana', 'Asadha', 'Jul', 23, 31],
+    ['Bhadra', 'Sravana', 'Aug', 23, 31],
+    ['Asvina','Bhadra', 'Sep', 23, 30],
+    ['Kartika', 'Asvina', 'Oct', 23, 31],
+    ['Agrahayana', 'Kartika', 'Nov', 22, 30],
+    ['Pausa', 'Agrahayana', 'Dec', 22, 31],
+  ];
+
+
   return (
     <div>
       <div><h1>Gregorian to Saka</h1></div>
@@ -47,13 +45,19 @@ function App() {
         <Calendar onChange={setValue} value={value}/>
       </div>
       <div>
-        {console.log(value.getMonth())}
-        <p>{saka_days[value.getDay()]}-{(value.getMonth() > 2) ? (something[3] - 78) : (value.getMonth === 2 ? (leap ? (value.getDate() > 22 ? something[3] - 78 : something[3] - 79) : (value.getDate() > 21 ? something[3] - 78 : something[3] - 79)) : (something[3] - 79))}</p>
-        <p>{value.getDate() > 20 ? (saka_months[(value.getMonth() < 2 ? value.getMonth() + 10  : (value.getMonth() - 2))% 12]) : (saka_months[(value.getMonth() < 2 ? value.getMonth() + 9  : (value.getMonth() - 3))% 12])}</p>
-
-
         <div>
-          <p>{leap ? (value.getMonth() > 2 || (value.getMonth() === 2 && value.getDate() >= 22) ? (value.getFullYear() - 78) : (value.getFullYear() - 79)) : ((value.getMonth() > 2 || (value.getMonth() === 2 && value.getDate() >= 21) ? (value.getFullYear() - 78) : (value.getFullYear() - 79)))}</p>
+          <p>
+            DAY : {saka_days[(current_date)%7]}
+          </p>
+          <p>
+            DATE : {current_date >= month[current_month][3] ? current_date - month[current_month][3] + 1 : month[current_month][4] - month[current_month][3] + current_date + 1}
+          </p>
+          <p>
+          MONTH : {current_date >= month[current_month][3] ? (month[current_month][0]) : (month[current_month][1])}
+          </p>
+          <p>
+            YEAR : {(current_month < 2 || (current_month === 2 && current_date < month[current_month][3])) ? (current_year - 79) : (current_year - 78)}
+          </p>
         </div>
       </div>
     </div>
