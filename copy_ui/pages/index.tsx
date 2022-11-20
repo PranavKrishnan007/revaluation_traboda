@@ -1,6 +1,4 @@
 import React from 'react';
-import TopBar from "../src/topbar";
-import SideNavbar from "../src/components/sidebar";
 import ResponsiveDrawer from "../src/components/sidebar";
 
 export default function Home() {
