@@ -1,6 +1,7 @@
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import MicNoneRoundedIcon from '@mui/icons-material/MicNoneRounded';
 import GraphicEqRoundedIcon from '@mui/icons-material/GraphicEqRounded';
+import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
 import * as React from "react";
 import {Badge, FormControlLabel, styled, Switch} from "@mui/material";
 import {BiSquareRounded} from "react-icons/all";
@@ -101,15 +102,17 @@ const NavBar = () => {
                                     </span>
                                 </div>
                             </div>
-                            <div className="w-1/3 absolute right-0 p-1">
-                                <FormControlLabel
-                                    control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-                                    label=""
-                                />
-                                <Badge badgeContent={""} color="primary" variant={"dot"}>
-                                    <BiSquareRounded size={32}/>
-                                </Badge>
-                                <div className="relative inline-block text-left">
+                            <div className="w-1/3 absolute right-0 flex flex-nowrap ">
+                                <div className="mt-2">
+                                    <FormControlLabel
+                                        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+                                        label=""
+                                    />
+                                    <Badge badgeContent={""} color="primary" variant={"dot"}>
+                                        <MailOutlineRoundedIcon color="action" />
+                                    </Badge>
+                                </div>
+                                <div className="relative inline-block mt-3">
                                     <div>
                                         <button
                                             type="button"
@@ -117,13 +120,16 @@ const NavBar = () => {
                                             id="menu-button" aria-expanded="true" aria-haspopup="true"
                                             onClick={() => setProfileOpen(!profileOpen)}
                                         >
-                                            <p className="text-gray-400">Hey,&nbsp;</p><p className="text-purple-700">Michel</p>
-                                            <svg className="-mr-1 ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path
-                                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                                  />
-                                            </svg>
+                                            <img src={"https://i.pravatar.cc/150?img=3"} className="rounded-full w-8 h-8" alt={"profile"}/>
+                                            <div className="ml-2 mt-2 flex flex-nowrap">
+                                                <p className="text-gray-400">Hey,&nbsp;</p><p className="text-purple-700">Michel</p>
+                                                <svg className="-mr-1 ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                     viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path
+                                                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                                      />
+                                                </svg>
+                                            </div>
                                         </button>
                                     </div>
                                     {profileOpen && (
