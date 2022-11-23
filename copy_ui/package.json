@@ -9,18 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "10.1.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.4",
     "@mui/icons-material": "^5.10.14",
-    "@mui/material": "^5.10.14",
+    "@mui/material": "^5.10.15",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
+    "emotion-theming": "^11.0.0",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.4",
     "next": "13.0.4",
     "react": "18.2.0",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "typescript": "4.9.3"
