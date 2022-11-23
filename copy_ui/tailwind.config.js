@@ -3,7 +3,14 @@ module.exports = {
   purge: ['./src/**/*.{jsx,tsx}', './pages/**/*.{jsx,tsx}'],
   darkMode: false,
   theme: {
-    extend: {},
+    placeholderColor: {
+      'primary': '#492c49'
+    },
+    extend: {
+      colors: {
+        primary: '#492c49',
+      }
+    },
   },
   variants: {
     extend: {
