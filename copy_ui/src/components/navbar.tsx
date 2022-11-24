@@ -59,15 +59,15 @@ const NavBar = () => {
     }));
 
     return (
-        <div className="border">
+        <div className="border w-full">
             <nav style={{backgroundColor: "#f9f9f9"}}>
-                <div className="w-full">
-                    <div className="relative flex flex-row items-center h-20 ">
+                <div className="w-full ">
+                    <div className="relative flex flex-row items-center h-20">
                         <div className="w-2/12">
-                            <img src={"sahithya.jpeg"} className="bg-transparent" alt={"logo_text"}/>
+                            <img src={"logo.jpeg"} className="bg-transparent ml-5" alt={"logo_text"}/>
                         </div>
                         <div className="w-10/12 relative flex flex-nowrap">
-                            <div className="w-1/3 relative">
+                            <div className="ml-12 w-1/3 relative">
                                 <GraphicEqRoundedIcon className="absolute placeholder-primary top-3 left-3"/>
                                 <input type="text"
 
