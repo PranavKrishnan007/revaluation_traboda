@@ -15,7 +15,7 @@ const Card = ({ children, count }) => {
                                 {/*title area*/}
                                 <div className="flex flex-row relative">
                                     <div className="text-2xl font-bold pt-3 px-5">
-                                        App UI Redesign
+                                        {children[0].title}
                                     </div>
                                     <div className="absolute right-3 pt-3">
                                         <button
