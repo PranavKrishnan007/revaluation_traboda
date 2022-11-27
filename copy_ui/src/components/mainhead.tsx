@@ -7,7 +7,7 @@ import {Avatar, AvatarGroup, Switch} from "@mui/material";
 import InsertLinkRoundedIcon from '@mui/icons-material/InsertLinkRounded';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
-import KanbanCol from "./kanbancol";
+import Card from "./card";
 
 const values = [
     {
@@ -32,35 +32,16 @@ const values = [
         "hours": "68",
         "image": "https://i.imgur.com/1ZQYQYR.png",
         "link": "https://www.figma.com/file/1ZQYQYR.png",
-        "description": "",
+        "description": "Oh god now you want a description also ? oh lord what do you expect from me ?",
         "by": "karthik",
         "by_image": "https://i.imgur.com/1ZQYQYR.png"
-    },
-    {
-        "title": "Dev Call",
-        "tags_present": "",
-        "tags": [],
-        "Assignee": [
-            "sai",
-            "karthik",
-            "surya"
-        ],
-        "tasks": "",
-        "hours": "",
-        "image": "https://i.imgur.com/1ZQYQYR.png",
-        "link": "https://www.figma.com/file/1ZQYQYR.png",
-        "link_description": "Meeting Notes",
-        "description": "somethnig that is something is the thingy that is the thing which is the most importatnt thingy in the world",
-        "by": "",
-        "by_image": ""
     }
 ];
 
-const title = "title";
-
-
 const MainHead = () => {
-    const [tags, setTags] = useState(false);
+    const [inProgress, setInProgress] = useState(2);
+    const [completed, setCompleted] = useState(1);
+    const [todo, setTodo] = useState(0);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [openOne, setOpenOne] = useState(false);
     const [openTwo, setOpenTwo] = useState(false);
@@ -155,118 +136,63 @@ const MainHead = () => {
                     </button>
                 </div>
             </div>
-            <hr className="border-1 my-1 "/>
-
-
-
-
-
-            {/*Kanban header*/}
-            <div className="flex flex-row h-3/5">
-                <div className="w-1/3 p-5 border-r h-full overflow-scroll scrollbar-hide">
-                {/*the card design*/}
-                {values.map((value, index) => {
-                    return (
-                        <div>
-                            <div className="w-full max-w-sm bg-white rounded-lg border rounded-t-2xl shadow-xl">
-                                {/*title area*/}
-                                <div className="flex flex-row relative">
-                                    <div className="text-2xl font-bold pt-3 px-5">
-                                        App UI Redesign
-                                    </div>
-                                    <div className="absolute right-3 pt-3">
-                                        <button
-                                            className="rounded-full place-items-center">
-                                            {tags ? (<MoreHorizOutlinedIcon className="text-xl place-self-center m-2"/>) : (<AddRoundedIcon className="text-xl place-self-center m-2"/>)}
-                                        </button>
-                                    </div>
-                                </div>
-                                {tags ? (
-                                    <div className="flex flex-row gap-1 p-1 ml-3">
-                                        <div className="">
-                                            <button className="border w-full max-w-min text-primary backdrop-blur-2xl bg-primary/20 whitespace-nowrap flex flex-nowrap  hover:bg-primary/40 rounded-full "
-                                            >
-                                                <p className="mx-3">Mobile</p>
-                                            </button>
-                                        </div>
-                                        <div className="">
-                                            <button className="border w-full max-w-min text-primary backdrop-blur-2xl bg-primary/20 whitespace-nowrap flex flex-nowrap  hover:bg-primary/40 rounded-full "
-                                            >
-                                                <p className="mx-3">Redesign</p>
-                                            </button>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    null
-                                )}
-                                <div className="flex flex-row py-3 px-5">
-                                    <div className="flex flex-col">
-                                        <p className="text-sm">Assigned to</p>
-                                        <AvatarGroup total={13}sx={{
-                                            '& .MuiAvatar-root': { width: 24, height: 24, fontSize: 15 },
-                                        }}>
-                                            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24 }} />
-                                            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" sx={{ width: 24, height: 24 }} />
-                                            <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" sx={{ width: 24, height: 24 }}/>
-                                            <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" sx={{ width: 24, height: 24 }}/>
-                                        </AvatarGroup>
-                                    </div>
-                                </div>
-                                <div className="my-1 mx-5">
-                                    <a className="" href="#">
-                                        <img className="rounded-2xl" src="https://avatars.githubusercontent.com/u/89575829?s=400&u=04aac8af43a272f95d805edaa75ce0cb8633bc0a&v=4" alt="product image"/>
-                                    </a>
-                                </div>
-                                <div className="px-5 pb-5">
-                                    <a href="#">
-                                        <h5 className="text-xl font-semibold tracking-tight text-gray-900">Apple Watch
-                                            Series 7 GPS, Aluminium Case, Starlight Sport</h5>
-                                    </a>
-                                    <div className="flex items-center mt-2.5 mb-5">
-                                        <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor"
-                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title>
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                        </svg>
-                                        <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor"
-                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title>
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                        </svg>
-                                        <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor"
-                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title>
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                        </svg>
-                                        <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor"
-                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fourth star</title>
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                        </svg>
-                                        <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor"
-                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title>
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                        </svg>
-                                        <span
-                                            className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3">5.0</span>
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-3xl font-bold text-gray-900">$599</span>
-                                        <a href="#"
-                                           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Add
-                                            to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })}
-                </div>
-                <div>
+            <hr className="border-1 my-1"/>
+            <div className="flex flex-row">
+                <div className="flex flex-row relative p-4 w-1/3 border-r">
                     <button
-                        className="bg-amber-300 m-2 p-2 rounded-full"
-                        onClick={() => setTags(!tags)}>tags?</button>
+                        className="flex flex-row w-full bg-orange-400 max-w-min whitespace-nowrap rounded-full  text-white text-sm px-2 py-1 hover:bg-orange-500"
+                    >
+                        In Progress
+                    </button>
+                    <div className="flex flex-row gap-2 absolute right-4 my-1 place-items-center">
+                        <AddRoundedIcon
+                            className="text-xl place-self-center cursor-pointer"
+                            onClick={() => setInProgress(inProgress+1)}
+                        />
+                        <MoreHorizOutlinedIcon className="text-xl place-self-center"/>
+                    </div>
+                </div>
+                <div className="flex flex-row relative p-4 w-1/3 border-r">
+                    <button
+                        className="flex flex-row w-full bg-green-400 max-w-min whitespace-nowrap rounded-full  text-white text-sm px-2 py-1 hover:bg-green-500"
+                    >
+                        Completed
+                    </button>
+                    <div className="flex flex-row gap-2 absolute right-4 my-1 place-items-center">
+                        <AddRoundedIcon
+                            className="text-xl place-self-center cursor-pointer"
+                            onClick={() => setCompleted(completed+1)}
+                        />
+                        <MoreHorizOutlinedIcon className="text-xl place-self-center"/>
+                    </div>
+                </div>
+                <div className="flex flex-row relative p-4 w-1/3 border-r">
+                    <button
+                        className="flex flex-row w-full bg-yellow-700 max-w-min whitespace-nowrap rounded-full  text-white text-sm px-4 py-1 hover:bg-yellow-800"
+                    >
+                        To do
+                    </button>
+                    <div className="flex flex-row gap-2 absolute right-4 my-1 place-items-center">
+                        <AddRoundedIcon
+                            className="text-xl place-self-center cursor-pointer"
+                            onClick={() => setTodo(todo+1)}
+                        />
+                        <MoreHorizOutlinedIcon className="text-xl place-self-center"/>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            {/*Kanban header*/}
+            <div className="flex flex-row h-1/3 -mb-40" style={{backgroundColor: "#f9f9f9"}}>
+                <div className="w-1/3 p-5 border-r h-full overflow-scroll scrollbar-hide">
+                    {/*the card design*/}
+                    <Card children={values} count={inProgress}/>
+                </div>
+                <div className="w-1/3 p-5 border-r h-full overflow-scroll scrollbar-hide">
+                    <Card children={values} count={completed}/>
+                </div>
+                <div className="w-1/3 p-5 border-r h-full overflow-scroll scrollbar-hide">
+                    <Card children={values} count={todo}/>
                 </div>
             </div>
         </div>
