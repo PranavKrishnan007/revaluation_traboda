@@ -15,3 +15,4 @@ ________________________
 ### Daily updates
 
 > 20th November - today's update is that i'm done with task-1, task-2 is ongoing and task-3 is also in the works.
+> 27th November - done with task 2, task 3. Starting with task-4.
