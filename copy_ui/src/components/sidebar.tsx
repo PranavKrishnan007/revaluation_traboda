@@ -91,7 +91,7 @@ const Sidebar = () => {
                                 No data to show,
                                 Create new task now
                             </p>
-                            <div className="w-full justify-center inline-flex bg-gray-200 rounded-xl p-4">
+                            <div className="w-full justify-center inline-flex bg-gray-200 rounded-lg p-4">
                                 <button className=" text-white bg-purple-800 rounded-xl p-3 focus:text-white hover:bg-purple-900 active:bg-purple-800 ">
                                     Create new task <AiOutlinePlus className="inline-block"/>
                                 </button>
