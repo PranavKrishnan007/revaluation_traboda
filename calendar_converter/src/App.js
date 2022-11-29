@@ -11,13 +11,13 @@ function App() {
   const leap = (current_year % 4 === 0 && current_year % 100 !== 0) || current_year % 400 === 0
 
   const saka_days = [
+    'Ravivara',
     'Somavara',
     'Mangalavara',
     'Budhavara',
     'Guruvara',
     'Shukravara',
     'Shanivara',
-    'Ravivara',
   ];
 
   const month = [
@@ -47,7 +47,7 @@ function App() {
       <div>
         <div>
           <p>
-            DAY : {saka_days[(current_date)%7]}
+            DAY : {saka_days[value.getDay()]}
           </p>
           <p>
             DATE : {current_date >= month[current_month][3] ? current_date - month[current_month][3] + 1 : month[current_month][4] - month[current_month][3] + current_date + 1}
