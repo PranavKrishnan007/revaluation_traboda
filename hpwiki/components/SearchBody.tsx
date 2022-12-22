@@ -40,8 +40,9 @@ const SearchBody = () => {
         setName(text)
     }
 
+    console.log(characters)
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col justify-center">
+        <div className="min-h-screen flex flex-col justify-center">
             <div className="relative p-12 w-full sm:max-w-2xl sm:mx-auto">
                 <div className="overflow-hidden z-0 rounded-full relative p-3">
                     <form role="form" className="relative flex z-50 bg-white rounded-full">
