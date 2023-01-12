@@ -39,7 +39,7 @@ export default function Characters() {
                 {characters.map(character => (
                     <a href={`/characters/${character.attributes.slug}`} className="flex flex-col justify-center max-w-xs p-6 rounded-xl bg-white">
                         <div className="p-3 border-2 border-black rounded hover:shadow-2xl bg-white">
-                            <img src="harry.jpeg" alt="background image"
+                            <img src={character.attributes.image} alt="background image"
                                  className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
                                  // style={{width: "70%", height: "70%"}}zz
                             />
