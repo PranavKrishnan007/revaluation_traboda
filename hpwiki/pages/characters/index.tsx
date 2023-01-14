@@ -20,7 +20,7 @@ export default function Characters() {
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
-    console.log(characters)
+    console.log(characters?.attributes?.image)
 
     return (
         <div className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900">
@@ -35,7 +35,7 @@ export default function Characters() {
                     </label>
                 </div>
             </div>
-            <div className="grid grid-cols-4 gap-4 p-5">
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 p-5">
                 {characters.map(character => (
                     <a href={`/characters/${character.attributes.slug}`} className="flex flex-col justify-center max-w-xs p-6 rounded-xl bg-white">
                         <div className="p-3 border-2 border-black rounded hover:shadow-2xl bg-white">
