@@ -1,3 +1,16 @@
+# HPWIKI task. 
+
+this is my submission for the HP wiki task. 
+
+<img src="https://user-images.githubusercontent.com/89575829/212532498-cd108256-2d1b-4567-8977-27406ea538c8.jpg" height=500 width=800 />
+
+<img src="https://user-images.githubusercontent.com/89575829/212532617-8439b126-1c32-43e4-9059-42aac03690ff.jpg" height=500 width=800 />
+
+<img src="https://user-images.githubusercontent.com/89575829/212532782-434a553a-078a-4b20-9f72-ba4f430de234.jpg" height=500 width=800 />
+
+with support for pagination 👍🏻
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
