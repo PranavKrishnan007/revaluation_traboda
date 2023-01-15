@@ -1,6 +1,9 @@
 # here we go learning about dbs....
 
 This is a task where we had to learn about the structure of tables and how to make relations between them. 🙂
+
+<img src="https://user-images.githubusercontent.com/89575829/212547129-4fd5c17f-7ff7-47e2-9acf-24619d92b6cc.jpg" width=600 height=400/>
+
 _________
 ### The Table Creation
 1. Participant's info table.
