@@ -1,6 +1,6 @@
 # HPWIKI task. 
 
-this is my submission for the HP wiki task. 
+this is my submission for the HP wiki task. click [here](https://revaluation-traboda-t67k.vercel.app/) for the deployment.
 
 <img src="https://user-images.githubusercontent.com/89575829/212532498-cd108256-2d1b-4567-8977-27406ea538c8.jpg" height=500 width=800 />
 
