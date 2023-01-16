@@ -1,9 +1,10 @@
 import Topbar from "../../components/topbar";
 import {useEffect, useState} from "react";
+import Link from "next/link";
 
 export default function Characters() {
 
-    const [characters, setCharacters] = useState([]);
+    const [characters, setCharacters] = useState(null);
     const [charPage, setCharPage] = useState(1);
     const [charList, setCharList] = useState([])
     const [some, setSome] = useState(true)
@@ -20,7 +21,6 @@ export default function Characters() {
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
-    console.log(characters?.attributes?.image)
 
     return (
         <div className="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900">
@@ -36,8 +36,8 @@ export default function Characters() {
                 </div>
             </div>
             <div className="grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 p-5">
-                {characters.map(character => (
-                    <a href={`/characters/${character.attributes.slug}`} className="flex flex-col justify-center max-w-xs p-6 rounded-xl bg-white">
+                {characters != null && characters.map((character, x) => (
+                    <Link key={x} href={`/characters/${character.attributes.slug}`} className="flex flex-col justify-center max-w-xs p-6 rounded-xl bg-white">
                         <div className="p-3 border-2 border-black rounded hover:shadow-2xl bg-white">
                             <img src={character.attributes.image} alt="background image"
                                  className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
@@ -50,7 +50,7 @@ export default function Characters() {
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
             <div className="flex items-center justify-center gap-4">

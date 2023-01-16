@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import {log} from "util";
 
 const SearchBody = () => {
     const [characters, setCharacters] = useState();
@@ -42,17 +41,17 @@ const SearchBody = () => {
                     <div className="glow glow-3 z-30 bg-yellow-400 absolute"></div>
                     <div className="glow glow-4 z-40 bg-blue-400 absolute"></div>
                 </div>
-                {name.length > 1 && typing ? (
+                {name.length > 1 && typing && (
                     <div className="">
-                        {characters.map(character => {
+                        {characters.map((character, x) => {
                             return (
-                                <div className="bg-white opacity-50 hover:opacity-100 rounded mr-32 ml-8 mt-1" onClick={() => {onSuggest(character.attributes.name), setSlug(character.attributes.slug)}}>
+                                <div key={x} className="bg-white opacity-50 hover:opacity-100 rounded mr-32 ml-8 mt-1" onClick={() => {onSuggest(character.attributes.name), setSlug(character.attributes.slug)}}>
                                     <h1 className="ml-3">{character.attributes.name}</h1>
                                 </div>
                             )
                         })}
                     </div>
-                ) : (null)}
+                )}
             </div>
         </div>
     )
