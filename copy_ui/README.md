@@ -2,6 +2,7 @@
 ![Screenshot 2023-01-15 at 2 00 29 PM](https://user-images.githubusercontent.com/89575829/212530566-4fcd1f33-d7c8-4625-95de-5926b10b8145.jpg)
 -------------------
 
+[link](https://copyuitask.vercel.app) to the deployed site.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
