@@ -3,19 +3,20 @@ import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import {Avatar, AvatarGroup} from "@mui/material";
 import {useState} from "react";
 
-const Card = ({ children, count }) => {
+const Card = (props: {value: any, count: number}) => {
+    const { value, count } = props;
     const [tags, setTags] = useState(false);
 
     return (
             <div>
                 {[...Array(count)].map((x, i) => {
                     return (
-                        <div className="mt-4">
+                        <div key={x} className="mt-4">
                             <div className="w-full max-w-sm bg-white rounded-lg border rounded-t-2xl shadow-xl">
                                 {/*title area*/}
                                 <div className="flex flex-row relative">
                                     <div className="text-2xl font-bold pt-3 px-5">
-                                        {children[0].title}
+                                        {value[0].title}
                                     </div>
                                     <div className="absolute right-3 pt-3">
                                         <button
@@ -26,7 +27,7 @@ const Card = ({ children, count }) => {
                                         </button>
                                     </div>
                                 </div>
-                                {tags ? (
+                                {tags && (
                                     <div className="flex flex-row gap-1 p-1 ml-3">
                                         <div className="">
                                             <button className="border w-full max-w-min text-primary backdrop-blur-2xl bg-primary/20 whitespace-nowrap flex flex-nowrap  hover:bg-primary/40 rounded-full "
@@ -41,8 +42,6 @@ const Card = ({ children, count }) => {
                                             </button>
                                         </div>
                                     </div>
-                                ) : (
-                                    null
                                 )}
                                 <div className="flex flex-row py-3 px-5">
                                     <div className="flex flex-col">

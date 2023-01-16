@@ -186,13 +186,13 @@ const MainHead = () => {
             <div className="flex flex-row h-1/3 -mb-40" style={{backgroundColor: "#f9f9f9"}}>
                 <div className="w-1/3 p-5 border-r h-full overflow-scroll scrollbar-hide">
                     {/*the card design*/}
-                    <Card children={values} count={inProgress}/>
+                    <Card value={values} count={inProgress}/>
                 </div>
                 <div className="w-1/3 p-5 border-r h-full overflow-scroll scrollbar-hide">
-                    <Card children={values} count={completed}/>
+                    <Card value={values} count={completed}/>
                 </div>
                 <div className="w-1/3 p-5 border-r h-full overflow-scroll scrollbar-hide">
-                    <Card children={values} count={todo}/>
+                    <Card value={values} count={todo}/>
                 </div>
             </div>
         </div>
